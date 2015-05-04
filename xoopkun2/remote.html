@@ -1,0 +1,78 @@
+<head>
+<title>Remote Controller for Xoops</title>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function pageBack(){
+	window.opener.history.back();
+}
+function pageForward(){
+	window.opener.history.forward();
+}
+function pageReload(){
+	window.opener.history.go(0);
+}
+// -->
+</script>
+<style type="text/css">
+body {padding:0px; margin:0px;}
+table {width:100%; border:0px;}
+.rc_body {background:#666666; color:#ffffff; padding:15px; text-align:center;}
+.rc_button {border:1px solid #FFFFFF; background:#999999; font-size:12pt; color:#FFFFFF; width:37px; height:37px; text-align:center; vertical-align:middle;}
+.rc_button2 {border:1px solid #FFFFFF; background:#999999; font-size:10pt; color:#FFFFFF; width:120px; height:25px; text-align:center; vertical-align:middle; margin-bottom:3px;}
+.rc_menu {text-align:left;}
+.rc_foot {border:1px solid #333333; background:#666666; color:#FFFFFF; text-align:center; font-size:11px; width:100%;}
+.rc_foot a{color:#FFFFFF; text-decoration:none;}
+</style>
+<body>
+
+<table border=0>
+<tr>
+<td class="rc_body">
+<form style="margin:0px;">
+	<table border=0><tr>
+	<td><input type="button" value=" 1 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../" title="GoBack to Home"></td>
+	<td><input type="button" value=" 2 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/news/" title="Go to News"></td>
+	<td><input type="button" value=" 3 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/newbb/" title="Go to Forum"></td>
+	</tr>
+	<tr>
+	<td class="rc_menu"><img src="home.gif" /></td>
+	<td class="rc_menu"><img src="news.gif" /></td>
+	<td class="rc_menu"><img src="forum.gif" /></td>
+	</tr>
+	<tr>
+	<td><input type="button" value=" 4 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/mydownloads/" title="Go to Download"></td>
+	<td><input type="button" value=" 5 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/mylinks/" title="Go to Blogs"></td>
+	<td><input type="button" value=" 6 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/piCal/" title="Go to Calender">&nbsp;</td>
+	</tr>
+	<tr>
+	<td class="rc_menu"><img src="download.gif" /></td>
+	<td class="rc_menu"><img src="link.gif" /></td>
+	<td class="rc_menu"><img src="pical.gif" /></td>
+	</tr>
+	<tr>
+	<td><input type="button" value=" 7 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/comics/" title="xoopkun"></td>
+	<td><input type="button" value=" 8 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../modules/contact/" title="none"></td>
+	<td><input type="button" value=" 9 " class="rc_button" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick=opener.location.href="../../user.php" title="Login site"></td>
+	</tr>
+	<tr>
+	<td class="rc_menu"><img src="comic.gif" /></td>
+	<td class="rc_menu"><img src="contact.gif" /></td>
+	<td class="rc_menu"><img src="login.gif" /></td>
+	</tr>
+	</table>
+<input type="button" value=" BACK " class="rc_button2" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick="pageBack()" title="Go Back">&nbsp;<br />
+<input type="button" value=" FORWARD " class="rc_button2" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick="pageForward()" title="Go Next">&nbsp;<br />
+<input type="button" value=" RELOAD " class="rc_button2" onMouseOver="this.style.background='#CCCCCC'" onMouseOut="this.style.background='#999999'" onClick="pageReload()" title="">&nbsp;<br />
+</form>
+</td></tr>
+<tr>
+<td class="rc_foot">Xoops Remote Controller<br /><a href="http://hello.oceannet.jp/" target=_blank>OCEAN-NET</a></td>
+</tr>
+</table>
+</body>
+</html>

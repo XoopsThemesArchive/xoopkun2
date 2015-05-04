@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<{$xoops_langcode}>" lang="<{$xoops_langcode}>">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="keywords" content="<{$xoops_meta_keywords}>" />
+<meta name="description" content="<{$xoops_meta_description}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="XOOPS" />
+<title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_themecss}>" />
+<!-- RMV: added module header -->
+<{$xoops_module_header}>
+<script type="text/javascript">
+<!--
+<{$xoops_js}>
+//-->
+</script>
+<script type="text/javascript">
+<!--
+function OpenWin(){
+	win1=window.open("<{$xoops_imageurl}>remote.html","remote","toolbar=0,location=0,directories=0,status=0,menubar=0,resizable=0,width=180,height=315");
+}
+// -->
+</script>
+</head>
+<body>
+
+<div align=center style="text-align:center;">
+
+<!-- ヘッダ部分の定義 -->
+<table cellspacing="0" width=800 style="width:800px;">
+<tr>
+<td id="header1" bgcolor=#FDFBE9>
+<a href="javascript:OpenWin()"><img src="<{$xoops_imageurl}>top.gif" align="left" title="リモコンで操作してみる？" /></a>
+<form action="<{$xoops_url}>/search.php" method="get" style="margin:0px;">
+<input type="text" name="query" size="20"/>
+<input type="hidden" name="action" value="results" />
+<input type="submit" name="searchSubmit" value="検索" />
+</form>
+<br /><br /><br />
+<{if $xoops_isuser}>
+<INPUT type="button" value="Logout" onclick="location.href='<{$xoops_url}>/user.php?op=logout'" style="border:1px solid #A58C68; color:#A58C68; background:transparent;">
+<{if $xoops_isadmin}>&nbsp;<INPUT type="button" value="Admin" onclick="location.href='<{$xoops_url}>/admin.php'" style="border:1px solid #A58C68; color:#A58C68; background:transparent;"><{/if}>
+<{else}>
+<INPUT type="button" value="Login" onclick="location.href='<{$xoops_url}>/user.php'" style="border:1px solid #A58C68; color:#A58C68; background:transparent;">&nbsp;<INPUT type="button" value="Regist" onclick="location.href='<{$xoops_url}>/register.php'" style="border:1px solid #A58C68; color:#A58C68; background:transparent;">
+<{/if}>
+</td>
+</tr>
+
+<tr>
+<td id="header2">
+	<a href="<{$xoops_url}>/" class=menu_link>ホーム</a>
+	<a href="<{$xoops_url}>/modules/news/" class=menu_link>最新ニュース</a>
+	<a href="<{$xoops_url}>/modules/newbb/" class=menu_link>フォーラム</a>
+	<a href="<{$xoops_url}>/modules/mydownload/" class=menu_link>ダウンロード</a>
+	<a href="<{$xoops_url}>/modules/mylinks/" class=menu_link>特選リンク集</a>
+	<a href="<{$xoops_url}>/modules/xcgal/" class=menu_link>ギャラリー</a>
+	<a href="<{$xoops_url}>/modules/contact/" class=menu_link>お問い合わせ</a>
+</td>
+</tr>
+<tr>
+<td id="header3">&nbsp;</td>
+</tr>
+</table>
+<!-- ヘッダ部分終わり -->
+
+<table cellspacing="0" width=800 style="width:800px;border:1px solid #F3C792;">
+    <tr>
+	<!-- 左ブロック部分の定義 -->
+      <td id="leftcolumn">
+        <{foreach item=block from=$xoops_lblocks}>
+		<{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+		<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+		<div class="blockContent"><{$block.content}></div>
+      <{/foreach}>
+    <!-- 左ブロック終わり -->
+
+      <{if $xoops_showrblock == 1}>
+
+      <!-- 右ブロック部分の定義 -->
+        <{foreach item=block from=$xoops_rblocks}>
+		<{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+			<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+			<div class="blockContent"><{$block.content}></div>
+        <{/foreach}>
+      <{/if}>
+      </td>
+      <!-- 右ブロック部分終わり -->
+
+      <td id="centercolumn">
+
+        <!-- Display center blocks if any -->
+        <{if $xoops_showcblock == 1}>
+
+        <table cellspacing="0">
+          <tr>
+          <!-- 中央-中央ブロック部分の定義 -->
+            <td id="centerCcolumn" colspan="2">
+            <{foreach item=block from=$xoops_ccblocks}>
+			<div style="padding: 5px;">
+		<{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+			<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+			<div class="blockContent"><{$block.content}></div>
+			</div>
+            <{/foreach}>
+            </td>
+          <!-- 中央-中央ブロック部分終わり -->
+          </tr>
+          <tr>
+
+          <!-- 中央-左ブロック部分の定義 -->
+            <td id="centerLcolumn">
+            <{foreach item=block from=$xoops_clblocks}>
+				<div style="padding: 0px 0px 0px 8px;">
+		<{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+				<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+				<div class="blockContent"><{$block.content}></div>
+				</div>
+            <{/foreach}>
+            </td>
+          <!-- 中央-左ブロック部分終わり -->
+
+
+          <!-- 中央-右ブロック部分の定義 -->
+			<td id="centerRcolumn">
+              <{foreach item=block from=$xoops_crblocks}>
+				<div style="padding: 0px 5px 0px 0px;">
+		<{if $block.title|regex_replace:"/.*none/":"none" ne "none"}>
+				<div class="blockTitle"><{$block.title}></div>
+		<{/if}>
+				<div class="blockContent"><{$block.content}></div>
+				</div>
+              <{/foreach}>
+            </td>
+          <!-- 中央-右ブロック部分終わり -->
+          </tr>
+        </table>
+
+        <{/if}>
+        <!-- End display center blocks -->
+
+        <div id="content">
+          <{$xoops_contents}>
+        </div>
+      </td>
+
+    </tr>
+</table>
+
+<!-- フッタ部分の定義 -->
+<table cellspacing="0" width=800 style="width:800px;">
+    <tr>
+    <td id="footerbar">
+	<a href="http://www.oceannet.jp/" target="_blank">
+	<img src="<{$xoops_imageurl}>poweredby.gif" alt="" /></a>
+	</td>
+    </tr>
+</table>
+<!-- フッタ部分終わり -->
+
+</div>
+</body>
+</html>
